@@ -57,17 +57,17 @@ function addMetric(row, label, count) {
   card.layoutVertically();
   card.backgroundColor = new Color(COLORS.panel);
   card.cornerRadius = 10;
-  card.setPadding(9, 12, 9, 12);
-  card.size = new Size(125, 67);
-  addLabel(card, label, 10, COLORS.muted);
-  card.addSpacer(5);
-  addLabel(card, count, 22, COLORS.text, true);
+  card.setPadding(5, 10, 5, 10);
+  card.size = new Size(125, 42);
+  addLabel(card, label, 9, COLORS.muted);
+  card.addSpacer(2);
+  addLabel(card, count, 17, COLORS.text, true);
 }
 
 function drawWidget(status, error) {
   const widget = new ListWidget();
   widget.backgroundColor = new Color(COLORS.background);
-  widget.setPadding(16, 16, 14, 16);
+  widget.setPadding(12, 14, 11, 14);
   widget.refreshAfterDate = new Date(Date.now() + SETTINGS.refreshMinutes * 60 * 1000);
 
   const header = widget.addStack();
@@ -76,7 +76,7 @@ function drawWidget(status, error) {
   header.addSpacer();
   addLabel(header, error ? "OFFLINE" : "SNAPSHOT", 9, COLORS.muted);
 
-  widget.addSpacer(12);
+  widget.addSpacer(7);
 
   if (error) {
     addLabel(widget, "Status unavailable", 16, COLORS.text, true);
@@ -98,7 +98,7 @@ function drawWidget(status, error) {
     top.addSpacer(8);
     addMetric(top, "PENDING", status.pending);
 
-    widget.addSpacer(8);
+    widget.addSpacer(6);
 
     const bottom = widget.addStack();
     addMetric(bottom, "COMPLETED", status.completed);
