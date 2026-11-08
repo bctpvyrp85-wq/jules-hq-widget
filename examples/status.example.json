@@ -1,0 +1,8 @@
+{
+  "employees": 12,
+  "pending": 4,
+  "completed": 7,
+  "inReview": 1,
+  "updatedAt": "2026-11-08T12:00:00Z",
+  "source": "public-demo"
+}

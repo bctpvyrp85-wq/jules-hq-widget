@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Public status widget snapshot",
+  "type": "object",
+  "required": ["employees", "pending", "completed", "inReview", "updatedAt"],
+  "properties": {
+    "employees": { "type": "integer", "minimum": 0 },
+    "pending": { "type": "integer", "minimum": 0 },
+    "completed": { "type": "integer", "minimum": 0 },
+    "inReview": { "type": "integer", "minimum": 0 },
+    "updatedAt": { "type": "string", "format": "date-time" },
+    "source": { "type": "string" }
+  },
+  "additionalProperties": false
+}
